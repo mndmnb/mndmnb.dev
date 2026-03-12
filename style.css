@@ -1,6 +1,4 @@
-/* ================================
-   ROOT & RESET
-================================ */
+/*
 :root {
     --bg: #0a0a0a;
     --bg-card: #111111;
@@ -43,9 +41,7 @@ a {
     color: inherit;
 }
 
-/* ================================
-   NAVBAR
-================================ */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -126,9 +122,7 @@ a {
     transition: all 0.3s;
 }
 
-/* ================================
-   MOBILE MENU
-================================ */
+
 .mobile-menu {
     display: none;
     position: fixed;
@@ -162,9 +156,7 @@ a {
     color: var(--accent);
 }
 
-/* ================================
-   HERO
-================================ */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -237,7 +229,7 @@ a {
     animation: fadeUp 0.6s ease forwards 0.75s;
 }
 
-/* Decorative background */
+
 .hero-deco {
     position: absolute;
     right: 0;
@@ -271,9 +263,7 @@ a {
     opacity: 0.4;
 }
 
-/* ================================
-   BUTTONS
-================================ */
+
 .btn-primary {
     display: inline-block;
     padding: 0.65rem 1.4rem;
@@ -312,9 +302,7 @@ a {
     color: var(--accent);
 }
 
-/* ================================
-   SECTIONS
-================================ */
+
 .section {
     padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 8vw, 10rem);
 }
@@ -347,9 +335,7 @@ a {
     max-width: 300px;
 }
 
-/* ================================
-   SKILLS
-================================ */
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -402,9 +388,7 @@ a {
     background: var(--accent-dim);
 }
 
-/* ================================
-   PROJECTS
-================================ */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -485,9 +469,7 @@ a {
     margin-right: 1px;
 }
 
-/* ================================
-   BLOG
-================================ */
+
 .blog-grid {
     display: grid;
     gap: 1.2rem;
@@ -529,9 +511,7 @@ a {
     color: var(--text-muted);
 }
 
-/* ================================
-   CONTACT
-================================ */
+
 .contact-content {
     max-width: 560px;
 }
@@ -579,9 +559,7 @@ a {
     color: var(--accent);
 }
 
-/* ================================
-   FOOTER
-================================ */
+
 .footer {
     padding: 2rem clamp(1.5rem, 8vw, 10rem);
     border-top: 1px solid var(--border);
@@ -597,9 +575,7 @@ a {
     opacity: 0.7;
 }
 
-/* ================================
-   ANIMATIONS
-================================ */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -623,9 +599,7 @@ a {
     transform: translateY(0);
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -670,4 +644,84 @@ a {
     .btn-ghost {
         text-align: center;
     }
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    color: #ccc;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 480px;
+    width: 100%;
+    padding: 120px 0 80px;
+}
+
+h1 {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.cursor {
+    color: #333;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.sub {
+    color: #444;
+    font-size: 0.8rem;
+    margin-bottom: 48px;
+}
+
+.section {
+    margin-bottom: 32px;
+}
+
+.label {
+    font-size: 0.65rem;
+    color: #333;
+    letter-spacing: 0.1em;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    margin-top: 8px;
+}
+
+li {
+    padding: 6px 0;
+    color: #555;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #141414;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ccc;
 }
