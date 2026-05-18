@@ -1,0 +1,227 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Manga Title';
+  src: local('Impact'), local('Arial Black'), local('Helvetica');
+  font-weight: 900;
+}
+
+:root {
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.07 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.07 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.07 0 0);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.93 0 0);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.93 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.88 0 0);
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.07 0 0);
+  --input: oklch(0.85 0 0);
+  --ring: oklch(0.3 0 0);
+  --chart-1: oklch(0.2 0 0);
+  --chart-2: oklch(0.4 0 0);
+  --chart-3: oklch(0.6 0 0);
+  --chart-4: oklch(0.8 0 0);
+  --chart-5: oklch(0.9 0 0);
+  --radius: 0rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  --panel-border: 3px;
+  --panel-gap: 6px;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-manga: 'Bangers', 'Impact', 'Arial Black', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Manga halftone dot pattern */
+.halftone {
+  background-image: radial-gradient(circle, oklch(0.07 0 0) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.halftone-lg {
+  background-image: radial-gradient(circle, oklch(0.07 0 0) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.halftone-subtle {
+  background-image: radial-gradient(circle, oklch(0.07 0 0) 0.5px, transparent 0.5px);
+  background-size: 6px 6px;
+  opacity: 0.3;
+}
+
+/* Speed lines animation */
+@keyframes speed-lines {
+  0% { transform: translateX(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes ink-drip {
+  0% { transform: scaleY(0); transform-origin: top; }
+  60% { transform: scaleY(1.05); }
+  100% { transform: scaleY(1); transform-origin: top; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(1deg); }
+  75% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes swim {
+  0%, 100% { transform: translateX(0) translateY(0) scaleX(1); }
+  25% { transform: translateX(15px) translateY(-8px) scaleX(1); }
+  50% { transform: translateX(30px) translateY(0) scaleX(-1); }
+  75% { transform: translateX(15px) translateY(8px) scaleX(-1); }
+}
+
+@keyframes panel-reveal {
+  0% { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes brush-stroke {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-swim {
+  animation: swim 8s ease-in-out infinite;
+}
+
+.animate-ripple {
+  animation: ripple 3s ease-out infinite;
+}
+
+/* Manga panel border styles */
+.panel-border {
+  border: var(--panel-border) solid oklch(0.07 0 0);
+  position: relative;
+}
+
+.panel-border-thick {
+  border: 4px solid oklch(0.07 0 0);
+}
+
+/* SFX text styling */
+.sfx-text {
+  font-family: var(--font-manga);
+  font-style: italic;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 0 oklch(0.98 0 0), -1px -1px 0 oklch(0.98 0 0);
+}
+
+/* Ink splatter effect */
+.ink-splatter::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: oklch(0.07 0 0);
+  border-radius: 50% 40% 60% 30%;
+  opacity: 0.2;
+}
+
+/* Custom scrollbar for manga feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.93 0 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.07 0 0);
+  border-radius: 0;
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
