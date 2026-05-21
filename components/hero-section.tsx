@@ -38,14 +38,12 @@ export function HeroSection() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-balance">
               SOFTWARE
               <br />
-              <span className="text-foreground/30">DEVEL</span>
-              <br />
-              OPER
+              DEVELOPER
             </h1>
             <p className="mt-6 text-sm md:text-base text-muted-foreground max-w-md font-mono tracking-wide leading-relaxed">
-              Building digital experiences with clean code.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br />
-              Fueled by curiosity and caffeine.
+              Sed do eiusmod tempor incididunt ut labore.
             </p>
           </motion.div>
         </MangaPanel>
@@ -111,7 +109,7 @@ export function HeroSection() {
             <div className="w-4 h-4 border-b-2 border-r-2 border-foreground rotate-45" />
           </motion.div>
           <span className="text-xs font-mono tracking-[0.2em] text-muted-foreground">
-            PAGE 01 / 05
+            PAGE 01
           </span>
         </MangaPanel>
       </div>
