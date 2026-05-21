@@ -24,7 +24,7 @@ export function MangaNav() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <div className="w-8 h-8 bg-foreground flex items-center justify-center">
-            <span className="text-primary-foreground text-xs font-black">YN</span>
+            <span className="text-primary-foreground text-xs font-black">MM</span>
           </div>
           <span className="text-xs font-mono tracking-[0.2em] text-muted-foreground hidden sm:block">
             PORTFOLIO
